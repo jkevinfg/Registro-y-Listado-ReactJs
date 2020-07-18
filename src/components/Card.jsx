@@ -3,25 +3,23 @@ import "./style/Card.css"
 
 
 class Card extends React.Component {
-
-    
     render(){
         return(
             <div className="card">
-                <div className="card_header">
-                    <img src="" alt="Logo de la conferencia"/>
+                <div className="card__header">
+                    <img src="" alt=""/>
                 </div>
-                <div className="card_section-name">
-                    <img className="card_avatar" src="" alt="Avatar"/>
+                <div className="card__section-name">
+                    <img className="card__avatar" src={this.props.avatar} alt="Avatar"/>
                     <h1>{this.props.firstName}
                         <br/> {this.props.lastName}
                     </h1>
                 </div>
-                <div className="card_section-info">
-                    <h3>Software developer</h3>
-                    <div>@jkevinfg</div>
+                <div className="card__section-info">
+                    <h3>{this.props.specialty}</h3>
+                    <div>@{this.props.twitter}</div>
                 </div>
-                <div className="card_footer">Conferencia Developer UNI</div>
+                <div className="card__footer">#Conferencia</div>
             </div>
         )
     }
