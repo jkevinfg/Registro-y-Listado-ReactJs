@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'bootstrap/dist/css/bootstrap.css' 
 import './global.css'
-import  Incio from './pages/Inicio'
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+import  Inicio from './pages/Inicio'
 const container = document.getElementById('app');
 
 
-ReactDOM.render(<Incio />, container);
+ReactDOM.render(<Inicio />, container);

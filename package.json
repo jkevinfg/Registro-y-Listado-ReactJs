@@ -12,9 +12,9 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "boostrap": "^2.0.0",
     "bootstrap": "^4.5.0",
     "react": "16.8.3",
+    "react-bootstrap": "^1.2.2",
     "react-dom": "16.8.3",
     "react-scripts": "2.1.5"
   },
