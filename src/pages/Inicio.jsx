@@ -7,11 +7,11 @@ import Card from '../components/Card'
 class Inicio extends React.Component {
     state = {
         form: {
-        firstName: '',
-        lastName: '',
-        email: '',
-        specialty: 'software developers',
-        twitter: ''
+            firstName: '',
+            lastName: '',
+            email: '',
+            specialty: 'software developers',
+            twitter: ''
         }
 }
 
