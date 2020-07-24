@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import CardsList from '../components/CardsList'
 import './style/List.css'
+import { Link } from 'react-router-dom'
 
 
 class List extends React.Component {
@@ -39,9 +40,8 @@ class List extends React.Component {
     
     render(){
         return (
-            <div>
-                <Navbar/>
-
+            <React.Fragment>
+          
                 <div className="List">
                     <div className="List__hero">
                         <div className="List__container">
@@ -52,9 +52,9 @@ class List extends React.Component {
 
                 <div className="List__container">
                     <div className="List__buttons">
-                        <a className="btn btn-primary" href="/card/new">
+                        <Link  to="/" className="btn btn-primary" >
                             Nuevo asistente
-                        </a>
+                        </Link>
                     </div>
                 </div>
 
@@ -64,7 +64,7 @@ class List extends React.Component {
                        <CardsList cards = {this.state.data} />
                     </div>
                 </div>
-            </div>
+            </React.Fragment>
         )
     }
 }

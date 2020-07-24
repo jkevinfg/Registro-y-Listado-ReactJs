@@ -2,10 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './global.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import  Inicio from './pages/Inicio'
-import List from './pages/List'
+import App from './components/App'
+
+
 
 const container = document.getElementById('app');
 
 
-ReactDOM.render(<List />, container);
+ReactDOM.render(<App />, container);

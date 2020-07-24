@@ -1,6 +1,5 @@
 import React from 'react'
 import './style/Inicio.css'
-import Navbar from '../components/Navbar'
 import Form from '../components/Form'
 import Card from '../components/Card'
 
@@ -27,8 +26,7 @@ class Inicio extends React.Component {
     
     render(){
         return (
-            <h1>
-                <Navbar/>
+            <React.Fragment>
                  <div className="Form__hero">
                     <img className="img-fluid" src="" alt=""/>
                  </div>
@@ -50,7 +48,7 @@ class Inicio extends React.Component {
                         
                      </div>
                  </div>
-            </h1>
+            </React.Fragment>
         )
     }
 }
