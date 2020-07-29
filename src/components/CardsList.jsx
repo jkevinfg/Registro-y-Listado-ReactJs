@@ -2,24 +2,20 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 
 import './style/CardsList.css';
-
+import Gravatar from './Gravatar'
 
 class CardsListItem extends React.Component {
   render() {
     return (
       <div className="CardsListItem">
-        <img
-          className="CardsListItem__avatar"
-          src={this.props.card.avatarUrl}
-          alt={`${this.props.card.firstName} ${this.props.card.lastName}`}
-        />
+        <Gravatar className="CardsListItem__avatar"  email={this.props.card.email} />
         <div>
           <strong>
             {this.props.card.firstName} {this.props.card.lastName}
           </strong>
           <br />@{this.props.card.twitter}
           <br />
-          {this.props.card.jobTitle}
+          {this.props.card.specialty}
         </div>
       </div>
     );

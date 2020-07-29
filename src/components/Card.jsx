@@ -1,6 +1,6 @@
 import React from 'react'
 import "./style/Card.css"
-
+import Gravatar from './Gravatar'
 
 class Card extends React.Component {
     render(){
@@ -9,12 +9,15 @@ class Card extends React.Component {
                 <div className="card__header">
                     <img src="" alt=""/>
                 </div>
+
                 <div className="card__section-name">
-                    <img className="card__avatar" src={this.props.avatar} alt="Avatar"/>
+                    <Gravatar className="card__avatar" email ={this.props.email} />
+                   
                     <h1>{this.props.firstName}
                         <br/> {this.props.lastName}
                     </h1>
                 </div>
+
                 <div className="card__section-info">
                     <h3>{this.props.specialty}</h3>
                     <div>@{this.props.twitter}</div>

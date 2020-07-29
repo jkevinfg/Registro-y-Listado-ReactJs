@@ -2,6 +2,8 @@ import React from 'react'
 import './style/Inicio.css'
 import Form from '../components/Form'
 import Card from '../components/Card'
+import api from '../api'
+
 
 class Inicio extends React.Component {
     state = {
@@ -9,11 +11,10 @@ class Inicio extends React.Component {
             firstName: '',
             lastName: '',
             email: '',
-            specialty: 'software developers',
+            specialty: '',
             twitter: ''
-        }
-}
-
+        }   
+    }
 
     handleChange = e => {
         this.setState({
@@ -23,6 +24,22 @@ class Inicio extends React.Component {
             }
         })
     }
+
+    handleSubmit = async e => {
+        e.preventDefault()
+        this.setState({
+            loading:true, error : null
+        })
+        try{
+            await api.badges.create(this.state.form)
+            this.setState({loading: false})
+
+        }catch(error){
+            this.setState({loading: false , error : error })
+        }
+    }
+
+   
     
     render(){
         return (
@@ -34,15 +51,16 @@ class Inicio extends React.Component {
                  <div className="container">
                      <div className="row">
                      <div className="col-md-6">
-                             <Form onChange = {this.handleChange} formValues = {this.state.form}/>
+                             <Form onChange = {this.handleChange}  onSubmit={this.handleSubmit}   formValues = {this.state.form}/>
                          </div>
                          <div className="col-md-6">
-                             <Card avatar="https://s.gravatar.com/avatar/b07373a89159201f5c1e652dc3a2903b?s=80"
-                              twitter= {this.state.form.twitter}
-                              specialty={this.state.form.specialty}
-                              lastName ={this.state.form.lastName}
-                              firstName = {this.state.form.firstName}
-                              email = {this.state.form.email}
+                             <Card 
+                              twitter= {this.state.form.twitter || 'Twitter'}
+                              specialty={this.state.form.specialty || 'Especialidad' }
+                              lastName ={this.state.form.lastName || 'Apellidos'}
+                              firstName = {this.state.form.firstName || 'Nombre' }
+                              email = {this.state.form.email || 'email' }
+                              avatar="https://www.gravatar.com/avatar/21594ed15d68ace3965642162f8d2e84?d=identicon"
                               />
                          </div>
                         

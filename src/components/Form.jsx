@@ -17,16 +17,16 @@ class Form extends React.Component {
     console.log('Button was clicked');
   };
 
-  handleSubmit = e => {
-    e.preventDefault();
-    console.log('Form was submitted');
-    console.log(this.state)
-  };
+  // handleSubmit = e => {
+  //   e.preventDefault();
+  //   console.log('Form was submitted');
+  //   console.log(this.state)
+  // };
 
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.props.onSubmit}>
           <div className="form-group">
             <h2>Nombre</h2>
             <input
