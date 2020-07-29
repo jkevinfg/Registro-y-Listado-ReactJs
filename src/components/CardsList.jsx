@@ -1,4 +1,6 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
+
 import './style/CardsList.css';
 
 
@@ -11,7 +13,6 @@ class CardsListItem extends React.Component {
           src={this.props.card.avatarUrl}
           alt={`${this.props.card.firstName} ${this.props.card.lastName}`}
         />
-
         <div>
           <strong>
             {this.props.card.firstName} {this.props.card.lastName}
@@ -27,6 +28,16 @@ class CardsListItem extends React.Component {
 
 class CardsList extends React.Component {
     render() {
+      if(this.props.cards.length === 0){
+          return(
+            <div>
+              <h3>No encontramos ningun asistente</h3>
+              <Link className="btn btn-primary"  to="/" >
+                Crear un nuevo registro
+              </Link>
+            </div>
+          )
+      }      
       return (
         <div className="CardsList">
           <ul className="list-unstyled">
