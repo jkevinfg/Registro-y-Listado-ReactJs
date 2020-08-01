@@ -1,0 +1,14 @@
+.CardDetails__hero {
+    width: 100%;
+    padding: 2rem 0;
+    background: url('../../img/fondo.png');
+    background-repeat: repeat;
+    margin-bottom:1rem ;
+    color : #ffffff
+}
+
+.CardDetails__hero-attendant-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

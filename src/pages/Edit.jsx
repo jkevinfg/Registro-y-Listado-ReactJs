@@ -5,10 +5,9 @@ import Card from '../components/Card'
 import PageLoading from '../components/PageLoading'
 import api from '../api'
 
-
-class Inicio extends React.Component {
+class Edit extends React.Component {
     state = {
-        loading : false,
+        loading : true,
         error: null,
         form: {
             firstName: '',
@@ -18,6 +17,24 @@ class Inicio extends React.Component {
             twitter: ''
         }   
     }
+
+    componentDidMount(){
+        this.fetchData()
+    }
+    
+    fetchData = async e => {
+        this.setState({ loading : true , error : null})
+        try{
+            const data = await api.badges.read(
+                this.props.match.params.id 
+            )
+            this.setState({loading: false, form : data })
+        }catch(error) {
+            this.setState({ loading : false , error : error})
+        }
+    }
+
+
 
     handleChange = e => {
         this.setState({
@@ -34,7 +51,7 @@ class Inicio extends React.Component {
             loading:true, error : null
         })
         try{
-            await api.badges.create(this.state.form)
+            await api.badges.update(this.props.match.params.id ,this.state.form)
             this.setState({loading: false})
             this.props.history.push('/lista')
         }catch(error){
@@ -59,7 +76,7 @@ class Inicio extends React.Component {
                  <div className="container">
                      <div className="row">
                      <div className="col-md-6">
-                     <h1>Nuevo asistente</h1>
+                     <h1> Editar asistente</h1>
 
                              <Form onChange = {this.handleChange}  
                                    onSubmit={this.handleSubmit}   
@@ -84,7 +101,7 @@ class Inicio extends React.Component {
     }
 }
 
-export default Inicio
+export default Edit
 
 
 

@@ -83,6 +83,9 @@ class Form extends React.Component {
           <button onClick={this.handleClick} className="btn btn-primary">
             Guardar
           </button>
+          {this.props.error && (
+            <p className="text-danger">{this.props.error.message}</p>
+          )}
         </form>
       </div>
     );

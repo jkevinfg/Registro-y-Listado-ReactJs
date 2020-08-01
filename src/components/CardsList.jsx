@@ -40,7 +40,9 @@ class CardsList extends React.Component {
             {this.props.cards.map(card => {
               return (
                 <li key={card.id}>
-                  <CardsListItem card={card} />
+                  <Link  className="text-reset text-decoration-none" to = {`/${card.id}`}>
+                      <CardsListItem card={card} />
+                  </Link>
                 </li>
               );
             })}
