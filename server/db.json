@@ -1,44 +1,28 @@
 {
   "badges": [
     {
-      "firstName": "Kevin",
-      "lastName": "Flores  Gamarra",
+      "firstName": "Jair",
+      "lastName": "Flores",
       "email": "jkevinfglml@gmail.com",
-      "specialty": "Ingenieria de software",
+      "specialty": "ingenierai de software",
       "twitter": "jkevinfg",
       "id": 1
     },
     {
-      "firstName": "Jair",
-      "lastName": "flores ",
+      "firstName": "Diana ",
+      "lastName": "castro",
       "email": "diana@gmail.com",
-      "specialty": "ingenierai de software",
-      "twitter": "asdasd",
+      "specialty": "ingenieria ambiental",
+      "twitter": "dianaccc",
       "id": 2
     },
     {
-      "firstName": "Diana",
-      "lastName": "Castro",
-      "email": "diana@gmail.com",
-      "specialty": "ingenieria ambiental",
-      "twitter": "dianacastro",
+      "firstName": "juan",
+      "lastName": "peres",
+      "email": "juan@gmail.com",
+      "specialty": "computer science ",
+      "twitter": "juanperez",
       "id": 3
-    },
-    {
-      "firstName": "Jair",
-      "lastName": "floress afaf",
-      "email": "jair@gmail.com",
-      "specialty": "ingenieria de software",
-      "twitter": "jair@asd",
-      "id": 4
-    },
-    {
-      "firstName": "Mario",
-      "lastName": "addadad",
-      "email": "mario@gmail.com",
-      "specialty": "ingenieria de software",
-      "twitter": "mario@hotmail.com",
-      "id": 5
     }
   ]
 }

@@ -1,11 +1,18 @@
 import React from 'react'
 import Card from '../components/Card'
+import DeleteCardModal from '../components/DeleteCardModal'
 import {Link} from 'react-router-dom'
 import './style/Details.css'
 
-
-
+function useIncreaseCount(max){
+    const [count, setCount] = React.useState(0)
+    if(count > max) {
+        setCount(0)
+    }
+    return [count,setCount]
+}
 function CardDetails (props) {
+    const [count, setCount] = useIncreaseCount(4)
     const card = props.card
     return (
         <div>
@@ -37,8 +44,21 @@ function CardDetails (props) {
                         <div className="col-6">
                             <h2>Actions</h2>
                             <div>
-                                <div> <Link  className="btn btn-primary mb-4"  to = {`/${card.id}/edit`}> Editar  </Link>   </div>
-                                <div> <button className ="btn btn-danger"> Delete </button></div>
+                                <div> 
+                                    <button  onClick={() => {
+                                        setCount(count + 1)
+                                    }} className="btn btn-primary mr-4">
+                                        Contador : {count}
+                                    </button>
+                                    <Link  className="btn btn-primary mb-4"  to = {`/${card.id}/edit`}> Editar  </Link>   </div>
+                                <div> 
+                                    <button  onClick={props.onOpenModal}  className ="btn btn-danger"> Delete </button>
+                                    <DeleteCardModal  
+                                        onClose={props.onCloseModal} 
+                                        isOpen= {props.modalIsOpen}
+                                        onDeleteCard = {props.onDeleteCard}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
