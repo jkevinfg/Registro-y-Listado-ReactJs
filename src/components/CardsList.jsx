@@ -22,13 +22,26 @@ class CardsListItem extends React.Component {
   }
 }
 
+function useSearchCards(cards){
+  const [query, setQuery] = React.useState('')
+  const [filteredCards,setFilteredCards] = React.useState(cards)
+
+  React.useMemo( ()=>{
+     const result = cards.filter(card => {
+      return `${card.firstName} ${card.lastName}`.toLowerCase().includes(query.toLowerCase())
+    })
+    setFilteredCards(result)
+  }, [cards , query])
+
+  return {query, setQuery, filteredCards }
+}
+
+
+
 function CardsList(props)  {
       const cards = props.cards
-      const [query, setQuery] = React.useState('')
 
-      const filteredCards = React.useMemo(cards.filter(card => {
-        return `${card.firstName} ${card.lastName}`.toLowerCase().includes(query.toLowerCase())
-      }))
+      const { query,  setQuery , filteredCards} = useSearchCards(cards)
 
 
       if(filteredCards.length === 0){
